@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "PhotoViewController.h"
 #import "ViewController.h"
+#import "ShelfView.h"
 
 @implementation AppDelegate
 
@@ -16,10 +17,74 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    //  背景*******
+    UIImageView *imageV = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    imageV.image = [UIImage imageNamed:@"IMG_0025.JPG"];
+    [self.window addSubview:imageV];
+
+    
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    PhotoViewController *photo = [[PhotoViewController alloc] initWithCollectionViewLayout:[PSUICollectionViewFlowLayout new]];
+    self.tabBarControl = [[UITabBarController alloc] init];
+    self.tabBarControl.viewControllers = [NSArray arrayWithObjects:self.viewController,photo, nil];
+    
+    [self createTabbar];
+    self.window.rootViewController = self.tabBarControl;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)createTabbar
+{
+    //  隐藏tabbar
+    [self hideTabBar];
+    //  创建tabbar
+    HWWTabbar *customTabbar = [[HWWTabbar alloc] initWithDelegate:self withItems:4];
+    customTabbar.backgroundColor = [UIColor clearColor];
+    [self.tabBarControl.view addSubview:customTabbar];
+    [customTabbar selectFirstButton];
+    
+    /*  改名字  */
+    [[customTabbar.btnArray objectAtIndex:0] setTitle:@"songs" forState:UIControlStateNormal];
+    [[customTabbar.btnArray objectAtIndex:1] setTitle:@"U" forState:UIControlStateNormal];
+    [[customTabbar.btnArray objectAtIndex:2] setTitle:@"W" forState:UIControlStateNormal];
+    [[customTabbar.btnArray objectAtIndex:3] setTitle:@"W" forState:UIControlStateNormal];
+}
+
+- (void)hideTabBar {
+    UIView *contentView;
+    if ([[self.tabBarControl.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]])
+        contentView = [self.tabBarControl.view.subviews objectAtIndex:1];
+    else
+        contentView = [self.tabBarControl.view.subviews objectAtIndex:0];
+    contentView.frame = CGRectMake(contentView.bounds.origin.x,
+                                   contentView.bounds.origin.y,
+                                   contentView.bounds.size.width,
+                                   contentView.bounds.size.height + self.tabBarControl.tabBar.frame.size.height);
+    self.tabBarControl.tabBar.hidden = YES;
+}
+
+//  Delegate custom
+- (void)didSelectedButtonIndex:(NSInteger)index
+{
+//    [self.tabBarControl setSelectedIndex:index];
+    UIView * fromView = self.tabBarControl.selectedViewController.view;
+    UIView * toView = [[self.tabBarControl.viewControllers objectAtIndex:index] view];
+    
+    if (fromView == toView) {
+        return;
+    }
+//    toView.frame = CGRectMake(0, 0, 320, 568);
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:(index > self.tabBarControl.selectedIndex ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight)
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            [self.tabBarControl setSelectedIndex:index];
+                        }
+                    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
