@@ -30,9 +30,9 @@
     [polygon2Path addLineToPoint: CGPointMake(2.55, 43)];
     [polygon2Path addLineToPoint: CGPointMake(35.45, 43)];
     [polygon2Path closePath];
-    [[UIColor whiteColor] setFill];
+    [[UIColor colorWithRed:0.659 green:0.694 blue:0.588 alpha:1.000] setFill];
     [polygon2Path fill];
-    [[UIColor blackColor] setStroke];
+    [[UIColor blueColor] setStroke];
     polygon2Path.lineWidth = 1;
     [polygon2Path stroke];
     
@@ -43,9 +43,9 @@
     [polygonPath addLineToPoint: CGPointMake(2.55, 24)];
     [polygonPath addLineToPoint: CGPointMake(35.45, 24)];
     [polygonPath closePath];
-    [[UIColor whiteColor] setFill];
+    [[UIColor colorWithRed:0.659 green:0.694 blue:0.588 alpha:1.000] setFill];
     [polygonPath fill];
-    [[UIColor blackColor] setStroke];
+    [[UIColor blueColor] setStroke];
     polygonPath.lineWidth = 1;
     [polygonPath stroke];
 }

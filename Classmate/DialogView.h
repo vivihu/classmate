@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DialogView : UIView
-
+{
+    NSString *_word;
+}
 - (void)drawLine:(NSTimer *)timer;
-- (id)initWithOrigin:(CGPoint)origin;
+- (id)initWithOrigin:(CGPoint)origin labelWord:(NSString *)word;
 
 @end

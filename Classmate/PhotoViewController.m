@@ -19,7 +19,8 @@
 
 @implementation PhotoViewController
 
-- (id)initWithCollectionViewLayout:(PSUICollectionViewLayout *)layout {
+- (id)initWithCollectionViewLayout:(PSUICollectionViewLayout *)layout
+{
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
 
@@ -72,7 +73,9 @@
 {
     PersonDetailView *personDetail = [[PersonDetailView alloc]init];
     [personDetail detailData:_rootItem index:indexPath.row];
-    [self presentModalViewController:personDetail animated:YES];
+    [self presentViewController:personDetail animated:YES completion:^{
+        ;
+    }];
 };
 
 
@@ -101,7 +104,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
-}
+
 @end

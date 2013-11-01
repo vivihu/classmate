@@ -10,6 +10,7 @@
 #import "Arrow.h"
 #import "play.h"
 #import "DialogView.h"
+#import "BackgroundView.h"
 #import "DetailViewController.h"
 
 @interface ViewController ()
@@ -66,13 +67,12 @@
     if (ios7){
         _label.frame = CGRectMake(0, 30, 320, 30);
         fit_y = kFullScreen.size.height-120;
-    }
-    else{
+    }else {
         _label.frame = CGRectMake(0, 20, 320, 30);
         fit_y = kFullScreen.size.height-130;
     }
-    _label.font= [UIFont systemFontOfSize:25];
-    _label.textAlignment= UITextAlignmentCenter;
+    _label.font = [UIFont systemFontOfSize:25.0f];
+    _label.textAlignment= NSTextAlignmentCenter;
     _label.textColor= [UIColor colorWithRed:0.133 green:0.286 blue:0.788 alpha:1.000];
     _label.numberOfLines=0;
     _label.backgroundColor= [UIColor clearColor];
@@ -231,7 +231,7 @@
     [_audioPlayer prepareToPlay];
 }
 
-//播放完成自动切换
+//播放完成
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     _songIndex++;
@@ -379,11 +379,13 @@
     {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
         view.contentMode = UIViewContentModeScaleAspectFit;
+        
+        BackgroundView *rectView = [[BackgroundView alloc] initWithOrigin:CGPointMake(0, 25)];
+        [view addSubview:rectView];
     }
     
     NSString *imageName = [_people objectAtIndex:index];
-    UIImage *image = [UIImage imageNamed:imageName];
-    ((UIImageView *)view).image = image;
+    ((UIImageView *)view).image = [UIImage imageNamed:imageName];
 
     return view;
 }
@@ -512,7 +514,7 @@
             }else
                 point = CGPointMake(67, 65);
         }
-        _alert = [[DialogView alloc] initWithOrigin:CGPointMake(67, 100)];
+        _alert = [[DialogView alloc] initWithOrigin:CGPointMake(67, 100) labelWord:@"别点了，就一首歌！"];
         [self.view addSubview:_alert];
         [NSTimer scheduledTimerWithTimeInterval:0.02 target:_alert selector:@selector(drawLine:) userInfo:nil repeats:YES];
         [UIView animateWithDuration:0.5

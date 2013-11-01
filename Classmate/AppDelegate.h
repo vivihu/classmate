@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HWWTabbar.h"
+#import "BasicTabbarController.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,CustomTabbarDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UITabBarController *tabBarControl;
+@property (strong, nonatomic) BasicTabbarController *tabBarControl;
 @property (strong, nonatomic) ViewController *viewController;
 
 @end

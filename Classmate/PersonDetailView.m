@@ -24,7 +24,9 @@
 
 - (void)popLastView
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        ;
+    }];
 }
 
 - (void)detailData:(RootItem *)item index:(NSInteger)index
@@ -36,12 +38,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImageView *imageV = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:kFullScreen];
     imageV.image = [UIImage imageNamed:@"IMG_0026.JPG"];
     [self.view addSubview:imageV];
     
 
-    _swipeView = [[SwipeView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+    _swipeView = [[SwipeView alloc] initWithFrame:self.view.bounds];
     _swipeView.delegate = self;
     _swipeView.dataSource = self;
     _swipeView.itemsPerPage = 1;
@@ -53,7 +55,6 @@
     [button addTarget:self action:@selector(popLastView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     button.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -M_PI / 2);
-
 }
 
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
@@ -119,11 +120,11 @@
     qq.text = QQNumText;
     cityN.text = cityText;
 
-    NSString *imagePath = [[NSBundle mainBundle]
-                           pathForResource:[imageName stringByDeletingPathExtension]
-                                    ofType:[imageName pathExtension]];
-    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
-    imageView.image = image;
+//    NSString *imagePath = [[NSBundle mainBundle]
+//                           pathForResource:[imageName stringByDeletingPathExtension]
+//                                    ofType:[imageName pathExtension]];
+//    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    imageView.image = [UIImage imageNamed:imageName];
 
     return view;
 }
@@ -136,11 +137,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.swipeView scrollToItemAtIndex:self.index duration:0];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-//    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

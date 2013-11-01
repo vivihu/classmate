@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import<AVFoundation/AVFoundation.h>
 #import "iCarousel.h"
+#import "BasicViewController.h"
 
 @class DialogView;
 @class play;
 @class DetailViewController;
-@interface ViewController : UIViewController
+@interface ViewController : BasicViewController
 <AVAudioPlayerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,iCarouselDataSource,iCarouselDelegate>
 {
     IBOutlet iCarousel *_carousel;

@@ -15,10 +15,11 @@
 @implementation DialogView
 static CGFloat v1;
 
-- (id)initWithOrigin:(CGPoint)origin
+- (id)initWithOrigin:(CGPoint)origin labelWord:(NSString *)word
 {
     self = [super initWithFrame:CGRectMake(origin.x, origin.y, 187, 61)];
     if (self) {
+        _word = [NSString stringWithString:word];
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -78,8 +79,8 @@ static CGFloat v1;
         [timer invalidate];
         
         UILabel *textWord = [[UILabel alloc] initWithFrame:self.bounds];
-        textWord.text = @"别点了，就一首歌！";
-        textWord.textAlignment = UITextAlignmentCenter;
+        textWord.text = _word;
+        textWord.textAlignment = NSTextAlignmentCenter;
         textWord.backgroundColor = [UIColor clearColor];
         textWord.textColor = [UIColor redColor];
         textWord.font = [UIFont fontWithName:@"asdfsd" size:20];

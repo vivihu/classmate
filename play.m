@@ -27,18 +27,18 @@
     if (self.select_) {
         //// Rectangle Drawing
         UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(3.5, 5.5, 34, 10)];
-        [[UIColor whiteColor] setFill];
+        [[UIColor clearColor] setFill];
         [rectanglePath fill];
-        [[UIColor blackColor] setStroke];
+        [[UIColor blueColor] setStroke];
         rectanglePath.lineWidth = 1;
         [rectanglePath stroke];
         
         
         //// Rectangle 3 Drawing
         UIBezierPath* rectangle3Path = [UIBezierPath bezierPathWithRect: CGRectMake(3.5, 20.5, 34, 10)];
-        [[UIColor whiteColor] setFill];
+        [[UIColor clearColor] setFill];
         [rectangle3Path fill];
-        [[UIColor blackColor] setStroke];
+        [[UIColor blueColor] setStroke];
         rectangle3Path.lineWidth = 1;
         [rectangle3Path stroke];
     }
@@ -49,9 +49,9 @@
         [polygonPath addLineToPoint: CGPointMake(2.68, 30)];
         [polygonPath addLineToPoint: CGPointMake(37.32, 30)];
         [polygonPath closePath];
-        [[UIColor whiteColor] setFill];
+        [[UIColor clearColor] setFill];
         [polygonPath fill];
-        [[UIColor blackColor] setStroke];
+        [[UIColor blueColor] setStroke];
         polygonPath.lineWidth = 1;
         [polygonPath stroke];
         

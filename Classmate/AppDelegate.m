@@ -10,6 +10,7 @@
 #import "PhotoViewController.h"
 #import "ViewController.h"
 #import "ShelfView.h"
+#import "DetailInfoViewController.h"
 
 @implementation AppDelegate
 
@@ -21,12 +22,14 @@
     UIImageView *imageV = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     imageV.image = [UIImage imageNamed:@"IMG_0025.JPG"];
     [self.window addSubview:imageV];
-
+//[[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     PhotoViewController *photo = [[PhotoViewController alloc] initWithCollectionViewLayout:[PSUICollectionViewFlowLayout new]];
-    self.tabBarControl = [[UITabBarController alloc] init];
-    self.tabBarControl.viewControllers = [NSArray arrayWithObjects:self.viewController,photo, nil];
+    
+    DetailInfoViewController *menuRoot = [[DetailInfoViewController alloc] init];
+    self.tabBarControl = [[BasicTabbarController alloc] init];
+    self.tabBarControl.viewControllers = [NSArray arrayWithObjects:self.viewController,photo,menuRoot, nil];
     
     [self createTabbar];
     self.window.rootViewController = self.tabBarControl;

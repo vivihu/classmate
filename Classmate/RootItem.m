@@ -13,7 +13,7 @@
 
 + (id)getData
 {
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"ClassTwo.json" ofType:nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"ClassTwo.json" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:path];
     id jsonData = [NSJSONSerialization JSONObjectWithData:data
                                                   options:NSJSONReadingAllowFragments
@@ -22,7 +22,7 @@
     NSDictionary *dicONE = @{@"name": @"name",@"phoneNum": @"phoneNum",@"QQ": @"qq",@"city": @"city",@"photo":@"photo"};
     id firstItem = [SecondItem mappingWithKey:@"classTwo" mapping:dicONE];
     NSDictionary *dicTWO = @{@"classTwo": firstItem};
-    RootItem *lastItem = [[self class]objectFromJSONObject:jsonData mapping:dicTWO];
+    RootItem *lastItem = [[self class] objectFromJSONObject:jsonData mapping:dicTWO];
     
     return lastItem;
 }

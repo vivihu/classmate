@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RootItem.h"
 #import <SwipeView/SwipeView.h>
+#import "BasicViewController.h"
 
-@interface PersonDetailView : UIViewController<SwipeViewDataSource,SwipeViewDelegate>
+@interface PersonDetailView : BasicViewController<SwipeViewDataSource,SwipeViewDelegate>
 
 @property (strong, nonatomic) RootItem *rootItem;
 @property (strong, nonatomic) SecondItem *secItem;

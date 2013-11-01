@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailInfoViewController">
+            <connections>
+                <outlet property="city" destination="HHb-WX-vrU" id="vDR-Z7-ME6"/>
+                <outlet property="detailInfo" destination="goD-kg-EkO" id="VDy-Ms-uq2"/>
+                <outlet property="mahuateng" destination="mU1-tK-ZIS" id="Ml3-Yf-TIC"/>
+                <outlet property="name" destination="PiH-3b-euz" id="Rbr-8U-ygc"/>
+                <outlet property="photo" destination="51s-DN-ESh" id="xB4-U1-Bzm"/>
+                <outlet property="telPhone" destination="Ahf-OF-beN" id="sRy-8r-uD1"/>
+                <outlet property="view" destination="1" id="U5L-fP-t5O"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goD-kg-EkO" userLabel="right">
+                    <rect key="frame" x="320" y="0.0" width="200" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="胡伟伟" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="17" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-3b-euz" userLabel="胡伟伟">
+                            <rect key="frame" x="163" y="20" width="17" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="88" id="eGw-E6-0jv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHb-WX-vrU" userLabel="嘉兴市">
+                            <rect key="frame" x="20" y="69" width="17" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qq号码" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="15" translatesAutoresizingMaskIntoConstraints="NO" id="mU1-tK-ZIS" userLabel="527692754">
+                            <rect key="frame" x="76" y="69" width="15" height="149"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="NYC-sC-zEc"/>
+                                <constraint firstAttribute="height" constant="149" id="bHN-yt-Ry9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-OF-beN" userLabel="15157427441">
+                            <rect key="frame" x="129" y="69" width="13" height="186"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="51s-DN-ESh">
+                            <rect key="frame" x="4" y="269" width="193" height="249"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <inset key="insetFor6xAndEarlier" minX="0.0" minY="-20" maxX="0.0" maxY="20"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Ahf-OF-beN" firstAttribute="leading" secondItem="mU1-tK-ZIS" secondAttribute="trailing" constant="38" id="0c1-Xd-JIL"/>
+                        <constraint firstItem="HHb-WX-vrU" firstAttribute="top" secondItem="goD-kg-EkO" secondAttribute="top" constant="69" id="F25-xh-gRP"/>
+                        <constraint firstItem="51s-DN-ESh" firstAttribute="leading" secondItem="goD-kg-EkO" secondAttribute="leading" constant="4" id="I4h-aJ-Im2"/>
+                        <constraint firstItem="51s-DN-ESh" firstAttribute="top" secondItem="Ahf-OF-beN" secondAttribute="bottom" constant="14" id="P8M-bl-uzq"/>
+                        <constraint firstItem="51s-DN-ESh" firstAttribute="top" secondItem="HHb-WX-vrU" secondAttribute="bottom" constant="50" id="SrY-v0-Ddy"/>
+                        <constraint firstAttribute="bottom" secondItem="51s-DN-ESh" secondAttribute="bottom" constant="50" id="VMO-NE-DFE"/>
+                        <constraint firstItem="HHb-WX-vrU" firstAttribute="leading" secondItem="goD-kg-EkO" secondAttribute="leading" constant="20" symbolic="YES" id="Ybq-Gn-hrm"/>
+                        <constraint firstItem="PiH-3b-euz" firstAttribute="leading" secondItem="Ahf-OF-beN" secondAttribute="trailing" constant="21" id="Ziw-KF-gyV"/>
+                        <constraint firstItem="51s-DN-ESh" firstAttribute="centerX" secondItem="goD-kg-EkO" secondAttribute="centerX" id="eMV-WD-xSF"/>
+                        <constraint firstItem="mU1-tK-ZIS" firstAttribute="baseline" secondItem="HHb-WX-vrU" secondAttribute="baseline" id="er7-BH-gKJ"/>
+                        <constraint firstItem="mU1-tK-ZIS" firstAttribute="top" secondItem="Ahf-OF-beN" secondAttribute="top" id="nwY-pT-GTY"/>
+                        <constraint firstItem="PiH-3b-euz" firstAttribute="top" secondItem="goD-kg-EkO" secondAttribute="top" constant="20" symbolic="YES" id="qAm-sd-ds7"/>
+                        <constraint firstItem="HHb-WX-vrU" firstAttribute="top" secondItem="mU1-tK-ZIS" secondAttribute="top" id="tH7-zZ-vQJ"/>
+                        <constraint firstAttribute="trailing" secondItem="PiH-3b-euz" secondAttribute="trailing" constant="20" symbolic="YES" id="wQH-0B-7qO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="goD-kg-EkO" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="320" id="5TG-fd-yjy"/>
+                <constraint firstAttribute="bottom" secondItem="goD-kg-EkO" secondAttribute="bottom" id="DVp-uM-vyM"/>
+                <constraint firstItem="goD-kg-EkO" firstAttribute="top" secondItem="1" secondAttribute="top" id="WDR-s5-l4V"/>
+                <constraint firstAttribute="trailing" secondItem="goD-kg-EkO" secondAttribute="trailing" constant="-200" id="kvv-3L-I1D"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
